@@ -1,15 +1,27 @@
-import Image from "next/image";
 import BookItem from "./BookItem";
 
-export default function BooksList({ books }) {
+type Book = {
+	title: string;
+	author_name: string[];
+	cover_i: string;
+	author_key: string;
+};
+
+export default function BooksList({ books }: { books: Book[] }) {
+	if (books.length === 0) {
+		return (
+			<div>
+				<p>Please wait...</p>
+			</div>
+		);
+	}
 	return (
-		<div>
-			<h2>Trending</h2>
-			<ul className="p-0 grid grid-cols-1 md:grid-cols-2 gap-3 list-none">
-				{books.slice(0, 6).map((book) => {
-					return <BookItem book={book} key={book.cover_edition_key} />;
-				})}
-			</ul>
-		</div>
+		<ul className="p-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 list-none">
+			{books.map((book) => {
+				return (
+					<BookItem book={book} key={`${book.author_key}_${book.title}`} />
+				);
+			})}
+		</ul>
 	);
 }

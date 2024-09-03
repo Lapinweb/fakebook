@@ -9,7 +9,7 @@ export default function Home() {
 
 	useEffect(() => {
 		async function getData() {
-			let data = await fetch("https://openlibrary.org/trending/now.json");
+			let data = await fetch("https://openlibrary.org/trending/now.json?limit=6");
 			let parsedData = await data.json();
 			setBooks(parsedData.works);
 		}
@@ -19,7 +19,11 @@ export default function Home() {
 	return (
 		<div className="px-4">
 			<h1 className="my-3">Home</h1>
-			<BooksList books={books} />
+
+			<div>
+				<h2>Trending</h2>
+				<BooksList books={books} />
+			</div>
 		</div>
 	);
 }
