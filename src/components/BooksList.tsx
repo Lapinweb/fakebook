@@ -4,7 +4,7 @@ type Book = {
 	title: string;
 	author_name: string[];
 	cover_i: string;
-	author_key: string;
+	key: number;
 };
 
 export default function BooksList({ books }: { books: Book[] }) {
@@ -19,7 +19,7 @@ export default function BooksList({ books }: { books: Book[] }) {
 		<ul className="p-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 list-none">
 			{books.map((book) => {
 				return (
-					<BookItem book={book} key={`${book.author_key}_${book.title}`} />
+					<BookItem book={book} key={book.title} />
 				);
 			})}
 		</ul>

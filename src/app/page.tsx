@@ -1,23 +1,12 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import Image from "next/image";
 import BooksList from "@/components/BooksList";
 
-export default function Home() {
-	const [books, setBooks] = useState([]);
-
-	useEffect(() => {
-		async function getData() {
-			let data = await fetch("https://openlibrary.org/trending/now.json?limit=6");
-			let parsedData = await data.json();
-			setBooks(parsedData.works);
-		}
-		getData();
-	}, []);
+export default async function Home() {
+		let data = await fetch("http://localhost:8080/books");
+		let parsedData = await data.json();
+		let books = parsedData.data;
 
 	return (
-		<div className="px-4">
+		<div className="px-3 md:px-6">
 			<h1 className="my-3">Home</h1>
 
 			<div>

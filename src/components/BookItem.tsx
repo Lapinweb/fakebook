@@ -5,12 +5,13 @@ type Book = {
 	title: string;
 	author_name: string[];
 	cover_i: string;
+	key: number;
 };
 
 export default function BookItem({ book }: { book: Book }) {
 	return (
 		<li className="bg-secondary text-secondary-content rounded-lg p-3">
-			<Link href="#">
+			<Link href={`works/${book.key}`}>
 				<h3 className="my-0 font-bold text-secondary-content overflow-hidden whitespace-nowrap text-ellipsis">
 					{book.title}
 				</h3>
