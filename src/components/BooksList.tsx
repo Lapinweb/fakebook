@@ -8,13 +8,6 @@ type Book = {
 };
 
 export default function BooksList({ books }: { books: Book[] }) {
-	if (books.length === 0) {
-		return (
-			<div>
-				<p>Please wait...</p>
-			</div>
-		);
-	}
 	return (
 		<ul className="p-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 list-none">
 			{books.map((book) => {

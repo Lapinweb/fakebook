@@ -18,17 +18,18 @@ export default function BookItem({ book }: { book: Book }) {
 			</Link>
 			<div className="divider"></div>
 			<div className="w-full">
-				<div className="h-52 relative">
-					<Image
-						className="object-contain m-0 w-auto"
-						src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
-						alt="placeholder"
-						loading="lazy"
-						width={0}
-						height={0}
-						fill
-						sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-					/>
+				<div className="h-52 relative flex justify-center">
+					{book.cover_i.length != 0 && (
+						<Image
+							className="object-contain m-0 w-auto"
+							src={`${book.cover_i}`}
+							alt=""
+							placeholder="empty"
+							//loading="lazy"
+							width={250}
+							height={150}
+						/>
+					)}
 				</div>
 				{/* <div>
 					<h4>{book.author_name.length > 1 ? "Authors" : "Author"} :</h4>

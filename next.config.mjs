@@ -4,9 +4,9 @@ const nextConfig = {
 		remotePatterns: [
 			{
 				protocol: "https",
-				hostname: "covers.openlibrary.org",
+				hostname: "via.assets.so",
 				port: "",
-				pathname: "/b/**/*",
+				pathname: "/*",
 			},
 		],
 	},

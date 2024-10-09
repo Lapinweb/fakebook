@@ -21,7 +21,7 @@ export default async function Work({ params }: { params: { key: string } }) {
 function WorkDetails({ work }: { work: Book }) {
 	return (
 		<div>
-			<p>{work.author_name?.join(", ") || ""}</p>
+			<p>{work.author_name}</p>
 		</div>
 	);
 }
