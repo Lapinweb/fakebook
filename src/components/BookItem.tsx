@@ -25,7 +25,7 @@ export default function BookItem({ book }: { book: Book }) {
 							src={`${book.cover_i}`}
 							alt=""
 							placeholder="empty"
-							//loading="lazy"
+							priority={true}
 							width={250}
 							height={150}
 						/>

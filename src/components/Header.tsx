@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Header() {
 	return (
 		<header className="sticky top-0 bg-primary text-primary-content z-10">
@@ -29,23 +31,17 @@ export default function Header() {
 							className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
 						>
 							<li>
-								<a>Item 1</a>
-							</li>
-							<li>
-								<a>Item 3</a>
+								<Link href={"/works"}>Item 1</Link>
 							</li>
 						</ul>
 					</div>
-					<a className="btn btn-ghost text-xl">FakeBook 📕</a>
+					<Link href={"/"} className="btn btn-ghost text-xl">FakeBook 📕</Link>
 				</div>
 				<div className="navbar-end">
 					<div className="hidden lg:flex">
 						<ul className="menu menu-horizontal px-1 not-prose">
 							<li>
-								<a>Item 1</a>
-							</li>
-							<li>
-								<a>Item 3</a>
+								<Link href={"/works"}>Item 1</Link>
 							</li>
 						</ul>
 					</div>
