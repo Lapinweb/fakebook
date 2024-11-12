@@ -31,17 +31,19 @@ export default function Header() {
 							className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
 						>
 							<li>
-								<Link href={"/works"}>Item 1</Link>
+								<Link href={"/works"}>Browse</Link>
 							</li>
 						</ul>
 					</div>
-					<Link href={"/"} className="btn btn-ghost text-xl">FakeBook 📕</Link>
+					<Link href={"/"} className="btn btn-ghost text-xl">
+						FakeBook 📕
+					</Link>
 				</div>
 				<div className="navbar-end">
 					<div className="hidden lg:flex">
 						<ul className="menu menu-horizontal px-1 not-prose">
 							<li>
-								<Link href={"/works"}>Item 1</Link>
+								<Link href={"/works"}>Browse</Link>
 							</li>
 						</ul>
 					</div>
